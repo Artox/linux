@@ -135,7 +135,12 @@
 	pinctrl-0 = <&pinctrl_i2c3>;
 	status = "okay";
 
-	/* TODO: embedded controller at 0x43 */
+	/* MSP430 at 0x43 */
+	ec@43 {
+		reg = <0x43>;
+		compatible = "netronix,msp430-ec";
+		status = "okay";
+	};
 };
 
 &iomuxc {
