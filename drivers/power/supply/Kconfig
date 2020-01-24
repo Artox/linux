@@ -710,4 +710,10 @@ config CHARGER_WILCO
 	  information can be found in
 	  Documentation/ABI/testing/sysfs-class-power-wilco
 
+config BATTERY_NTX_MSP430
+	tristate "NTX MSP430 battery monitor driver"
+	depends on MFD_NTX_MSP430
+	help
+	  Say Y here to enable support for battery monitoring with NTX MSP430.
+
 endif # POWER_SUPPLY

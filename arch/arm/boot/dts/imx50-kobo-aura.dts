@@ -20,6 +20,15 @@
 		reg = <0x70000000 0x10000000>;
 	};
 
+	/* PR-285083 battery */
+	bat: battery {
+		compatible = "simple-battery";
+		voltage-min-design-microvolt = <3400000>;
+		voltage-max-design-microvolt = <4100000>;
+		energy-full-design-microwatt-hours = <5550000>;
+		charge-full-design-microamp-hours = <1500000>;
+	};
+
 	gpio-leds {
 		compatible = "gpio-leds";
 		pinctrl-names = "default";
@@ -140,6 +149,11 @@
 		reg = <0x43>;
 		compatible = "netronix,msp430-ec";
 		status = "okay";
+
+		ec_bat {
+			compatible = "netronix,msp430-ec-battery";
+			monitored-battery = <&bat>;
+		};
 	};
 };
 
