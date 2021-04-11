@@ -833,4 +833,12 @@ config CHARGER_SURFACE
 	  Microsoft Surface devices, i.e. Surface Pro 7, Surface Laptop 3,
 	  Surface Book 3, and Surface Laptop Go.
 
+config BATTERY_NTXEC
+	tristate "Battery driver for Netronix embedded controller"
+	depends on MFD_NTXEC
+	help
+	  Say yes here if you want to support the battery monitoring functionality
+	  of the embedded controller found in certain e-book readers designed by
+	  the original design manufacturer Netronix.
+
 endif # POWER_SUPPLY
